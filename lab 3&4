@@ -1,0 +1,246 @@
+1) Print all alphabets in upper case and in lower case.
+ print("Upper case alphabets:")
+ for l in range(65, 91):  # ASCII values for A to Z
+    print(chr(l), end=" ")
+ print()
+ print("Lower case alphabets:")
+ for l in range(97, 123):  # ASCII values for a to z
+    print(chr(l), end=" ")
+ print()
+ Upper case alphabets:
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+Lower case alphabets:
+ a b c d e f g h i j k l m n o p q r s t u v w x y z 
+
+
+2) Print a multiplication table of a given number.
+ def print_multiplication_table(number):
+    print(f"Multiplication Table for {number}:")
+    for m in range(1, 11):
+        print(f"{number} x {m} = {number * m}")
+ number = int(input("Enter a number: "))
+ print_multiplication_table(number)
+ Enter a number: 999
+ Multiplication Table for 999:
+ 999 x 1 = 999
+ 999 x 2 = 1998
+ 999 x 3 = 2997
+ 999 x 4 = 3996
+ 999 x 5 = 4995
+ 999 x 6 = 5994
+ 999 x 7 = 6993
+ 999 x 8 = 7992
+ 999 x 9 = 8991
+ 999 x 10 = 9990
+
+
+ 3) Count no. of alphabets and no. of digits in any given string.
+ def count_digits_of_alphabets(input_string):
+    alphabt_of_counte = 0
+    digit_of_count = 0
+    for char in input_string:
+        if char.isalpha():
+            alphabt_of_counte += 1
+        elif char.isdigit():
+            digit_of_count += 1
+    return alphabt_of_counte, digit_of_count
+ input_of_string = input("Enter a string: ")
+ alphabets, digits = count_digits_of_alphabets(input_of_string)
+ print(f"Number of alphabets: {alphabets}")
+ print(f"Number of digits: {digits}")
+ Enter a string: hello friends 9999
+ Number of alphabets: 12
+ Number of digits: 4
+
+
+ 4) Check whether a given number is prime, is perfect, is Armstrong, is palindrome, is automorphic.
+ def is_prime(num):
+    if num <= 1:
+        return False
+    for b in range(2, int(num ** 0.5) + 1):
+        if num % b == 0:
+            return False
+    return True
+ def is_perfect(num):
+    if num <= 0:
+        return False
+    sum_of_divisors = 0
+    for b in range(1, num):
+ if num % b== 0:
+            sum_of_divisors += b
+    return sum_of_divisors == num
+ def is_armstrong(num):
+    num_str = str(num)
+    num_length = len(num_str)
+    sum_of_powers = 0
+    for digit in num_str:
+        sum_of_powers += int(digit) ** num_length
+    return sum_of_powers == num
+ def is_palindrome(num):
+    num_str = str(num)
+    return num_str == num_str[::-1]
+ def is_automorphic(num):
+    num_str = str(num)
+    square_str = str(num ** 2)
+    return square_str.endswith(num_str)
+ number = int(input("Enter a number: "))
+ print(f"Is {number} prime? {'Yes' if is_prime(number) else 'No'}")
+ print(f"Is {number} perfect? {'Yes' if is_perfect(number) else 'No'}")
+ print(f"Is {number} Armstrong? {'Yes' if is_armstrong(number) else 'No'}")
+ print(f"Is {number} palindrome? {'Yes' if is_palindrome(number) else 'No'}")
+ print(f"Is {number} automorphic? {'Yes' if is_automorphic(number) else 'No'}")
+ Enter a number: 98989
+ Is 98989 prime? No
+ Is 98989 perfect? No
+ Is 98989 Armstrong? No
+ Is 98989 palindrome? Yes
+ Is 98989 automorphic? No
+
+
+ 5) Generate all Pythagorean Triplets with side length <= 30.
+ def generate_pythagorean_triplets(limit):
+    triplets = []
+    for a in range(1, limit + 1):
+        for b in range(a, limit + 1):
+            c = (a ** 2 + b ** 2) ** 0.5
+            if c.is_integer() and c <= limit:
+                triplets.append((a, b, int(c)))
+    return triplets
+ limit = 30
+ triplets = generate_pythagorean_triplets(limit)
+ print(f"Pythagorean triplets with side lengths <= {limit}:")
+ for triplet in triplets:
+    print(triplet)
+ Pythagorean triplets with side lengths <= 30:
+ (3, 4, 5)
+ (5, 12, 13)
+ (6, 8, 10)
+ (7, 24, 25)
+ (8, 15, 17)
+ (9, 12, 15)
+ (10, 24, 26)
+ (12, 16, 20)
+ (15, 20, 25)
+ (18, 24, 30)
+ (20, 21, 29)
+
+
+ 6) Print 24 hours of day with suitable suffixes like AM, PM, Noon and Midnight
+def print_24_hours_with_suffixes():
+    for hour in range(0, 24):
+        if hour == 0:
+            print("12 Midnight")
+        elif hour < 12:
+            print(f"{hour} AM")
+        elif hour == 12:
+            print("12 Noon")
+        else:
+            print(f"{hour - 12} PM")
+ print_24_hours_with_suffixes()
+ 12 Midnight
+ 1 AM
+ 2 AM
+ 3 AM
+ 4 AM
+ 5 AM
+ 6 AM
+ 7 AM
+ 8 AM
+ 9 AM
+ 10 AM
+ 11 AM
+ 12 Noon
+ 1 PM
+ 2 PM
+ 3 PM
+ 4 PM
+ 5 PM
+ 6 PM
+ 7 PM
+ 8 PM
+ 9 PM
+ 10 PM
+ 11 PM
+
+
+ 7) Print nCr and nPr.
+ def factorial(n):
+    result = 1
+    for y in range(1, n + 1):
+        result *= y
+    return result
+ def nCr(n, r):
+    return factorial(n) // (factorial(r) * factorial(n - r))
+ def nPr(n, r):
+    return factorial(n) // factorial(n - r)
+ 2
+ n = int(input("Enter the value of n: "))
+ r = int(input("Enter the value of r: "))
+ print(f"{n}C{r} = {nCr(n, r)}")
+ print(f"{n}P{r} = {nPr(n, r)}")
+ Enter the value of n: 5
+ Enter the value of r: 2
+ 5C2 = 10
+ 5P2 = 20
+
+
+ 8) Print factorial of a given number.
+ def factorial(num):
+    result = 1
+    for u in range(1, num + 1):
+        result *= u
+    return result
+ number = int(input("Enter a number: "))
+ print(f"The factorial of {number} is {factorial(number)}")
+ Enter a number: 26
+ The factorial of 26 is 403291461126605635584000000
+
+
+ 9) Print N natural nos. in reverse
+def print_natural_numbers_reverse(N):
+    for w in range(N, 0, -1):
+        print(w, end=" ")
+    print()
+ N = int(input("Enter the value of N: "))
+ print(f"The first {N} natural numbers in reverse order are:")
+ print_natural_numbers_reverse(N)
+  
+ Enter the value of N: 48
+ The first 48 natural numbers in reverse order are:
+ 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2
+
+
+ 10) Generate N numbers of Fibonacci series.
+ def generate_fibonacci_series(m):
+    fibonacci_series = []
+    a, b = 0, 1
+    for _ in range(m):
+        fibonacci_series.append(a)
+        a, b = b, a + b
+    return fibonacci_series
+ m = int(input("Enter the value of m: "))
+ fibonacci_series = generate_fibonacci_series(m)
+ print(f"The first {m} numbers of the Fibonacci series are:")
+ print(fibonacci_series)
+ Enter the value of m: 9
+ The first 9 numbers of the Fibonacci series are:
+ [0, 1, 1, 2, 3, 5, 8, 13, 21]
+ 11) Calculate sin(x); x is a radian value. The formula is as under: sin(x)=x-x^3/3!+x^5/5!-x^7/7!..... (hint: degrees can be converted into radians
+ by 3.14159 / 180.)
+ import math
+ def factorial(m):
+    result = 1
+    for i in range(1, m + 1):
+        result *= i
+    return result
+ def sin(x, terms=10):
+    sin_x = 0
+    for m in range(terms):
+        term = ((-1) ** m) * (x ** (2 * m + 1)) / factorial(2 * m + 1)
+        sin_x += term
+    return sin_x
+ angle_degrees = float(input("Enter the angle in degrees: "))
+ angle_radians = angle_degrees * (math.pi / 180)
+ print(f"sin({angle_degrees} degrees) = {sin(angle_radians)}")
+ Enter the angle in degrees: 90
+ sin(90.0 degrees) = 1.0
