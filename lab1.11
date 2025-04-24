@@ -1,0 +1,5 @@
+ 11.) Convert grams into kg.
+ grams=99000
+ kg=grams/1000
+ print(kg)
+ 99.0
