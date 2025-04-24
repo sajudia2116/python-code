@@ -1,0 +1,6 @@
+10.) Convert dollars into pound where 1 $ = 48 Rs. And 1 pound = 70 Rs.
+ dollar=8888
+ rs=dollar*48
+ pound=rs/70
+ print(pound)
+ 6094.628571428571
