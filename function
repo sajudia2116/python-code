@@ -1,0 +1,134 @@
+ 1. Write a program that defines a function count_lower_upper() that accepts a string and calculates the number of uppercase and
+ lowercase alphabets in it. It should return these values as a dictionary. Call this function for some sample string.
+ def count_lowers_uppers(s):
+    result = {"uppercase": 0, "lowercase": 0}
+    for char in s:
+        if char.isupper():
+            result["uppercase"] += 1
+        elif char.islower():
+            result["lowercase"] += 1
+    return result
+ sample_string = "Hello World!"
+ print(count_lowers_uppers(sample_string))
+ {'uppercase': 2, 'lowercase': 8}
+ 3. Write a program that defines a function create_array() to create and return a 3D array whose dimensions are passed to the function.
+ Also initialize each element of this aray to a value passed to the function. e.g. create_array(3,4,5,n) where first three arguments are 3D
+ array dimensions and 4th value is for initialing each value of the 3D array.
+ def creates_array(dim1, dim2, dim3, value):
+    return [[[value for _ in range(dim3)] for _ in range(dim2)] for _ in range(dim1)]
+ arrays = creates_array(2, 2, 2, 7)
+ print(arrays)
+ [[[7, 7], [7, 7]], [[7, 7], [7, 7]]]
+
+ 
+  4. Write a program that defines a function sum_avg() to accept marks of five subjects and calculates total and average. It should return
+ directly both values.
+ def sum_and_avg(marks):
+ Total = sum(marks)
+ Average = Total / len(marks)
+ return Total, Average
+ marks = [99, 90, 91, 84, 69]
+ Total, Average = sum_and_avg(marks)
+ print("Total:", Total)
+ print("Average:", Average)
+ Total: 433
+ Average: 86.6
+
+ 
+ 5. Pangram is a sentence that uses every letter of the alphabet. Write a program to check whether a given string is pangram or not,
+ through a user-defined function ispangram(). Test the function with “The quick brown fox jumps over the lazy dog” or “Crazy Fredrick
+ bought many very exquisite opal jewels”. Hint: use set() to convert the string into a set of characters present in the string and use <= to
+ check whether alphaset is a subset of the given string
+ import string
+ def ispangram(sentence):
+ Alphaset = set(string.ascii_lowercase)
+ return Alphaset <= set(sentence.lower())
+ test_1 = "Those Who do not know pain will never understand true peace"
+ test_2 = "Crazy Fredrick bought many very exquisite opal jewels"
+ print(ispangram(test_1))
+ print(ispangram(test_2))
+ False
+ True
+
+ 
+ 6. Write a function to create and return a list containing tuples of the form (x,x2 ,x3 ) for all x between 1 and given ending value (both
+ inclusive).
+ def generates_tuples(end_value):
+ return [(x, x**2, x**3) for x in range(1, end_value + 1)]
+ result = generates_tuples(4)
+ print(result)
+ [(1, 1, 1), (2, 4, 8), (3, 9, 27), (4, 16, 64)]
+
+ 
+ 7. A palindrome is a word or phrase that reads the same in both directions. Write a program that defines a function ispalindrome() which
+ checks whether a given string is a palindrome or not. Ignore spaces and case mismatch while checking for palindrome.
+ def ispalindrome(str):
+ str = str.replace(" ", "").lower()
+ return str == str[::-1]
+ test_str1 = "a man is powerful"
+ test_str2 = "sage o egas"
+ print(ispalindrome(test_str1))  
+print(ispalindrome(test_str2))  
+False
+ True
+
+ 
+ 8. Write a program that defines a function convert() that receives a string containing a sequence of whitespace separated words and
+ returns a string after removing all duplicate words and sorting them alphanumerically. Hint: use set(), list () , sorted(), join().
+ def convert(s):
+ return " ".join(sorted(set(s.split())))
+ input_string = "naruto sasuke naruto akatsuki sasuke boruto"
+ output_string = convert(input_string)
+ print(output_string)
+ akatsuki boruto naruto sasuke
+
+ 
+ 9. Write a program that defines a function count_alpha_digits() that accepts a string and calculates the number of alphabets and digits in
+ it. It should return these values as a dictionary.
+ def count_alphabets_digits(str):
+    result = {"alphabet": 0, "digit": 0}
+    for char in str:
+        if char.isalpha():
+            result["alphabet"] += 1
+        elif char.isdigit():
+            result["digit"] += 1
+    return result
+ samp_string = "hello1234prince6!"
+ print(count_alphabets_digits(samp_string))
+ {'alphabet': 11, 'digit': 5}
+
+ 
+ 10. Write a program that defines a function called frequency() which computes the frequency of words present in a string passed to it. The
+ frequencies should be returned in sorted order of words in the string.
+ def frequency(str):
+    words = str.split()
+    frequency_dict = {}
+    for word in words:
+        frequency_dict[word] = frequency_dict.get(word, 0) + 1
+    return dict(sorted(frequency_dict.items()))
+ text = "gato uzumaki gato konoichi uchiha "
+ result = frequency(text)
+ print(result)
+ {'gato': 2, 'konoichi': 1, 'uchiha': 1, 'uzumaki': 1}
+
+ 
+ 11. Write a function create_list() that creates and returns a list which is an intersection of two lists passed to it.
+ def create_list(list_1, list_2):
+    return [item for item in list_1 if item in list_2]
+ list_1 = [11, 22, 33, 44, 55]
+ list_2 = [44, 55, 67, 79, 18]
+ result = create_list(list_1, list_2)
+ print(result)
+ [44, 55]
+ Write following programs considering functions or recursive functions in mind:
+ 1. If a positive integer is entered through the keyword, write a recursive function to obtain the prime factors of the number.
+ def prime_factors(n, divisor=2):
+    if n <= 1:
+        return []
+    if n % divisor == 0:
+        return [divisor] + prime_factors(n // divisor, divisor)
+    else:
+        return prime_factors(n, divisor + 1)
+ number = int(input("Enter a positive integer: "))
+ result = prime_factors(number)
+ print("Prime factors:", result)
