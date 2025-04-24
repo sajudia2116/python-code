@@ -1,0 +1,7 @@
+13.) Convert bytes into KB, MB and GB.
+ bytes=898989
+ kb=bytes/1024
+ mb=kb/1024
+ gb=mb/1024
+ print(kb,mb,gb)
+ 877.9189453125 0.8573427200317383 0.0008372487500309944
