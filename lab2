@@ -1,0 +1,192 @@
+ 1.)Print largest and smallest values out of two.
+ num1= 32
+ num2 = 54
+ if (num1>num2):
+ print("Num1 is largest values")
+ else:
+ print("num1 is smallest")
+ if(num2>num1):
+ print("num2 is largest values")
+ else:
+ print("num2 is smallest")
+ num1 is smallest
+ num2 is largest values
+
+
+ 2.) Print largest and smallest values out of three.
+ num1 = 99
+ num2 = 999
+ num3 = 9999
+ if(num1>num2 and num1 >num3):
+ print("num1 is largest values")
+ else:
+ print("num1 is smallest")
+ if(num2>num3 and num2>num1):
+ print("num2 is largest values")
+ else:
+ print("num2 is smallest")
+ if(num3>num1 and num3>num2):
+ print("num3 is largest")
+ else:
+ print("num3 is smallest")
+ num1 is smallest
+ num2 is smallest
+ num3 is largest
+
+
+ 3.) Check whether a given number is odd or even
+ num = 399
+ if(num%2==0):
+ print("Even")
+ else:
+ print("odd")
+ odd
+
+
+ 4.) Check whether a given number is divisible by 10 or not.
+ num = 459
+ if(num%10==0):
+ print("it is divisiable by 10")
+ else:
+ print("not it is not divisiable by 10")
+ not it is not divisiable by 10
+
+
+ 5.) Accept age of a person. If age is less than 18, print minor otherwise Major.
+ age = int(input("Enter the age of person:"))
+ if(age<18):
+ print("minor")
+ else:
+ print("major")
+ Enter the age of person:19
+ major
+
+
+ 6.) Accept a number from the user. And print number of digits in it.
+ number = input("Enter the numbers:")
+ print(len(number))
+ Enter the numbers:999
+ 3
+
+
+ 7.) Accept a year value from the user. Check whether it is a leap year or not.
+ year = int(input("Enter the year:"))
+ if( year % 4 == 0 and ( year % 400 == 0 or year % 100 != 0 )):
+ print("it is a leap year")
+ else:
+ print("it is not leap year")
+ Enter the year:2007
+ it is not leap year
+
+
+ 8.) Check whether a triangle is valid or not, when the three angles of the triangle are entered through the keyboard. A triangle is valid if te sum
+ of all the three angles is equal to 180 degrees.
+ side1 = int(input("Enter the 1st side:"))
+ side2 = int(input("Enter the 2nd side:"))
+ side3 = int(input("Enter the 3rd side:"))
+ if(side1 + side2 +side3 == 180):
+ print("triange is valid")
+ else:
+ print("triange is invalid")
+ Enter the 1st side:80
+ Enter the 2nd side:50
+ Enter the 3rd side:50
+ triange is valid
+
+
+ 9.) Print absolute value of a given number.
+ num = -9090
+ print(abs(num))
+ 9090
+
+
+ 10.) Given the length and breadth of a rectangle, write a program to find whether theare of the rectangle is greater than its perimeter.
+ length = 890
+ breath = 89
+ area = length * breath
+ perimeter = 2*(length + breath)
+ if(area > perimeter):
+ print('area is greater than perimeter')
+ else:
+ print('area is smaller than perimeter')
+ area is greater than perimeter
+
+
+ 11.) Given three points (x1,y1), (x2,y2) and (x3,y3), check if all the three points fall on one straight line
+ x1 = 99
+ x2 = 70
+ x3 =96
+ y1 =35
+ y2 = 44
+ y3 =72
+ a = (x1*(y2-y3))+(x2*(y3-y1))+(x3*(y1-y2))
+ if (a == 0):
+ print('all the points fall on one stright line') else:
+ print("all the points dont fall on one stright line")
+ all the points dont fall on one stright line
+
+
+ 12.) Given the coordinates (x,y) of center of a circle and its radius, determine whether a point lies inside the circle, on the circle or outside the
+ circle. (Hint: Use sqrt( ), pow( ) )
+ import math
+ circle_m = 99
+ circle_n = 198
+ radius = 99
+ point_m = 99
+ point_n = 99
+ distance = math.sqrt(math.pow(point_m - circle_m, 2) +
+ math.pow(point_n - circle_n, 2))
+ if distance < radius:
+ print(f"The point ({point_m}, {point_n}) is inside the circle.")
+ elif distance == radius:
+ print(f"The point ({point_m}, {point_n}) is on the circle.")
+ else:
+ print(f"The point ({point_m}, {point_n}) is outside the circle.")
+ The point (99, 99) is on the circle.
+
+
+ 13.) Convert number 0 to 19 to its equivalent words. E.g. 0  zero, 19 nineteen.
+ numbers = 19
+ numbers_word = [
+ "zero", "one", "two", "three", "four", "five", "six", "seven",
+ "eight", "nine",
+ "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+ "sixteen",
+ "seventeen", "eighteen", "nineteen"
+ ]
+ if 0 <= numbers <= 19:
+ print(f"The number {numbers} is written as'{numbers_word[numbers]}'.")
+ else:
+ print("Number is out of range (0-19).")
+ The number 19 is written as'nineteen'.
+
+
+ 14.) Accept marks of three subjects. Print total and average along with whether a candidate has passed or fail. If student secures <= 39
+ marks in any subject, consider him as fail. Also assigned a subject wise grade based on the following table: bold text
+ sub1 = int(input("Enter the maths marks:"))
+ sub2 = int(input("Enter the chemistry marks:"))
+ sub3 = int(input("Enter the physics marks:"))
+ sum = ( sub1 + sub2 + sub3 ) / 3
+ if(sub1 <= 39 or sub2 <=39 or sub3<=39):
+ print("Fail")
+ elif(sum>= 40 and sum <=44 ):
+ print("P")
+ elif(sum>= 45 and sum <=49 ):
+ print("C")
+ elif(sum>= 50 and sum <=54 ):
+ print("B")
+ elif(sum>= 55 and sum <=59 ):
+ print("B+")
+ elif(sum>= 60 and sum <= 69 ):
+ print("A")
+ elif(sum>= 70 and sum <= 79):
+ print("A+")
+ elif(sum>= 80 and sum <=100 ):
+ print("O")
+ else:
+ print("good")
+ Enter the maths marks:87
+ Enter the chemistry marks:78
+ Enter the physics marks:99
+ O
+ 
