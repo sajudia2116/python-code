@@ -1,0 +1,7 @@
+ 18.) Calculate area & perimeter of a rectangle. A = L*B, P = 2 (L+B)
+ l=92
+ b=89
+ a=l*b
+ p=2*(l+b)
+ print(a,p)
+ 8188 362
