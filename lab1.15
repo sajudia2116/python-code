@@ -1,0 +1,6 @@
+15.) Convert Fahrenheit into celcius. C = 5/9 * (F – 32)
+ fahrenheit=999
+ celcius=5/9*(fahrenheit-32)
+ print(celcius)
+ 537.2222222222223
+ 
