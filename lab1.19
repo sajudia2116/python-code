@@ -1,0 +1,5 @@
+ 19.) Calculate area of a circle. A = 22/7 * R * R
+ r=72
+ a=22/7*r*r
+ print(a)
+ 16292.571428571428
