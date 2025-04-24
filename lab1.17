@@ -1,0 +1,6 @@
+17.) Calculate area & perimeter of a square. A = L^2, P = 4L
+ l=96
+ a=l**2
+ p=4*l
+ print(a,p)
+ 9216 384
