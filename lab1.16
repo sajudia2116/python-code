@@ -1,0 +1,7 @@
+ 16.) Calculate interest where I = PRN/100.
+ p=100000
+ r=1000
+ n=1
+ i=p*r*n/100
+ print(i)
+ 1000000.0
