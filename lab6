@@ -1,0 +1,97 @@
+ 1. A list contains names of boys and girls as its elements. Boys’ names are stored as tuples. Write a program to find out number of boys
+ and girls in the list. (Hint: use isinstance(ele,tuple))
+ def count_boys_and_girls(names_of_list):
+    boys_of_count = 0
+    girls_of_count = 0
+    for ele in names_of_list:
+        if isinstance(ele, tuple):
+            boys_of_count += 1
+        else:
+            girls_of_count += 1
+ return boys_of_count, girls_of_count
+ names_of_list = [("John",), "Emma", ("Mike",), "Sophia", "Olivia", ("David",)]
+ boys, girls = count_boys_and_girls(names_of_list)
+ print(f"Number of boys: {boys}")
+ print(f"Number of girls: {girls}")
+ Number of boys: 3
+ Number of girls: 3
+
+
+ 2. A list contains tuples containing roll no., name and age of student. Write a python program to create three lists separately for roll no.,
+ name and age
+ students = [(1, "Johny", 20), (2, "Emmi", 29), (3, "Mikel", 37), (4, "Sophiana", 17), (5, "Olvi", 19)]
+ Roll_Numbers = []
+ Names = []
+ Ages = []
+ for student in students:
+ roll_no, name, age = student
+ Roll_Numbers.append(roll_no)
+ Names.append(name)
+ Ages.append(age)
+ print("Roll Numbers:", Roll_Numbers)
+ print("Names:", Names)
+ print("Ages:", Ages)
+ Roll Numbers: [1, 2, 3, 4, 5]
+ Names: ['Johny', 'Emmi', 'Mikel', 'Sophiana', 'Olvi']
+ Ages: [20, 29, 37, 17, 19]
+
+
+ 3. Suppose a date is represented as a tuple (d, m, y). Create two date tuples and find the number of days between the two dates.
+ from datetime import datetime
+ date1 = ( 28, 2, 2025 )
+ date2 = ( 28, 2, 2024 )
+ date1_object = datetime(date1[2], date1[1], date1[0])
+ date2_object = datetime(date2[2], date2[1], date2[0])
+ days_difference = abs((date1_object - date2_object).days)
+ print(f"Number of days between two dates: {days_difference}")
+ Number of days between two dates: 366
+
+
+ 4. Create a list of tuples containing a food item and its price. Sort the tuples in descending order by price.
+ # List of tuples containing food items and their prices
+ food_items = [("Ramen", 9.99), ("Burger", 6.79), ("Sushi", 14.69), ("Noodles", 7.49), ("Salad", 4.99)]
+ # Sort the list of tuples in descending order by price of food items
+ sorted_food_items = sorted(food_items, key=lambda item: item[1], reverse=True)
+ # Print the sorted list of food items
+ print("Sorted food items by price (descending):")
+ for item in sorted_food_items:
+ print(f"{item[0]}: ${item[1]:.2f}")
+ Sorted food items by price (descending):
+ Sushi: $14.69
+ Ramen: $9.99
+ Noodles: $7.49
+ Burger: $6.79
+ Salad: $4.99
+
+
+ 5. Remove empty tuple(s) from the list of tuples
+ # list of tuples with some empty tuples
+ tuples_list = [("Pizza", 8.99), (), ("Burger", 5.99), (), ("Sushi", 12.99), ("Pasta", 7.49), (), ("Salad", 4.99)]
+ # Remove empty tuples
+ filtered_tuples_list = [tup for tup in tuples_list if tup]
+ # Print the filtered list
+ print("List after removing empty tuples:")
+ print(filtered_tuples_list)
+ List after removing empty tuples:
+ [('Pizza', 8.99), ('Burger', 5.99), ('Sushi', 12.99), ('Pasta', 7.49), ('Salad', 4.99)]
+
+
+ 6. Modify an element of a tuple.
+ main_tuple = (12, 23, 34, 45, 56)
+ index_to_modify = 2
+ new_value = 105
+ modified_tuple = main_tuple[:index_to_modify] + (new_value,) + main_tuple[index_to_modify + 1:]
+ print("Original tuple:", main_tuple)
+ print("Modified tuple:", modified_tuple)
+ Original tuple: (12, 23, 34, 45, 56)
+ Modified tuple: (12, 23, 105, 45, 56)
+
+
+ 7. Delete an element of a tuple.
+ main_tuple = (14, 25, 36, 47, 59)
+ index_to_delete = 2
+ modified_tuple = main_tuple[:index_to_delete] + main_tuple[index_to_delete + 1:]
+ print("Original tuple:", main_tuple)
+ print("Modified tuple:", modified_tuple)
+ Original tuple: (14, 25, 36, 47, 59)
+ Modified tuple: (14, 25, 47, 59)
