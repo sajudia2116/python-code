@@ -1,0 +1,8 @@
+ 21.) Calculate net salary where net salary = gross salary + allowance – deduction. Allowances are 10% while deductions are 3% of gross
+ salary.
+ gs=999999
+ a=gs*10/100
+ d=gs*3/100
+ ns=gs+a-d
+ print(ns)
+ 1069998.93
