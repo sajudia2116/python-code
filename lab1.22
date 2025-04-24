@@ -1,0 +1,6 @@
+ 22.) Calculate net sales where net sales = gross sales – 10% discount of gross sales.
+ gs=999999
+ d=gs*10/100
+ ns=gs-d
+ print(ns)
+ 899999.1
