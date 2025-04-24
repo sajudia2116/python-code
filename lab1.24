@@ -1,0 +1,8 @@
+ 24.) Swap two values
+ v1=9988
+ v2=8899
+ temp=v1
+ v1=v2
+ v2=temp
+ print(v1,v2)
+ 8899 9988
