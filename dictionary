@@ -1,0 +1,55 @@
+ 1. Write a program to create three dictionaries and concatenate them to create fourth dictionary.
+ Dict1 = {"A": 101, "B": 110}
+ Dict2 = {"C": 999, "D": 111}
+ Dict3 = {"E": 520, "F": 456}
+ Dict4 = {**Dict1, **Dict2, **Dict3}
+ print(Dict4)
+ {'A': 101, 'B': 110, 'C': 999, 'D': 111, 'E': 520, 'F': 456}
+
+
+ 2. Write a program to check whether a dictionary is empty or not
+ My_Dictonary = {"9999"}
+ if not My_Dictonary:
+ print("My dictionary is empty.")
+ else:
+ print("My dictionary is not empty.")
+ My dictionary is not empty.
+
+
+ 3. Create a dictionary with dept no, employee roll no. and salary. Find out department wise min and maximum of salary.
+ Data = [
+ {"dept_no": 9, "emp_roll": 1001, "salary": 90000},
+ {"dept_no": 9, "emp_roll": 1002, "salary": 80000},
+ {"dept_no": 10, "emp_roll": 2001, "salary": 10000},
+ {"dept_no": 10, "emp_roll": 2002, "salary": 70000}
+ ]
+ from collections import defaultdict
+ Dept_Salaries = defaultdict(list)
+ for record in Data:
+ Dept_Salaries[record["dept_no"]].append(record["salary"])
+max_min_salary = {
+    dept: {"min": min(salaries), "max": max(salaries)}
+    for dept, salaries in Dept_Salaries.items()
+ }
+ print(max_min_salary)
+ {9: {'min': 80000, 'max': 90000}, 10: {'min': 10000, 'max': 70000}}
+
+
+ 4. Write a program that reads a string from the keyboard and creates dictionary containing frequency of each character occurring in the
+ string.
+ String = input("Enter a string: ")
+ Char_Frequency = {}
+ for char in String:
+    Char_Frequency[char] = Char_Frequency.get(char, 0) + 1
+ print(Char_Frequency)
+ Enter a string: hello guys welcome
+ {'h': 1, 'e': 3, 'l': 3, 'o': 2, ' ': 2, 'g': 1, 'u': 1, 'y': 1, 's': 1, 'w': 1, 'c': 1, 'm': 1}
+
+
+ 5. Create two dictionaries – one containing grocery items and their prices and another containing grocery items and quantity purchased.
+ By using the values from these two dictionaries compute the total bill.
+ prices = {"ramen": 200, "cheese ball": 500, "sting": 900}
+ quantities = {"ramen": 10, "cheese ball": 20, "sting": 99}
+ total_bill = sum(prices[item] * quantities.get(item, 0) for item in prices)
+ print("Total Bill:", total_bill)
+ Total Bill: 101100
